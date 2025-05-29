@@ -7,8 +7,8 @@ namespace wg::graphics
 {
     struct Vertex
     {
-        Vec2f position;
-        Vec2f color;
+        Vec3f position;
+        Vec4f color;
         Vec2f textureCoords;
     };
 }

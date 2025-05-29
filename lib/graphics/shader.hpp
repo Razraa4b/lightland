@@ -6,7 +6,7 @@ namespace wg::graphics
     #define SHADER unsigned int
     #define SHADER_PROGRAM unsigned int
 
-    /// @brief The class representing functions for creating and managing shaders
+    /// @brief Class providing methods for working with shaders
     class Shader
     {
     public:
@@ -38,6 +38,7 @@ namespace wg::graphics
         SHADER m_shader;
     };
 
+    /// @brief Class providing methods for working with shader program
     class ShaderProgram
     {
     public:
