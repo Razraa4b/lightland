@@ -18,9 +18,9 @@ namespace wg::graphics
         
         /// @brief Initializes buffer data for bundle and vertex data
         /// @param buffer Vertex buffer to bind
-        /// @param count Count of vertices
+        /// @param vertexCount Count of vertices
         /// @param startIndex Start index in buffer data
-        VertexArray(VertexBuffer& buffer, int count, int startIndex = 0);
+        VertexArray(VertexBuffer& buffer, size_t vertexCount, int startIndex = 0);
 
         /// @brief Transfers data from `moved` to a new VertexArray instance
         /// @param moved Movable instance
@@ -41,11 +41,26 @@ namespace wg::graphics
 
         /// @brief Deletes the vertex array object from memory
         void destroy() const;
+
+        /// @brief Returns OpenGL vertex array handle
+        unsigned int getHandle() const;
+
+        /// @brief Sets start index
+        void setStartIndex(int startIndex);
+        
+        /// @brief Sets vertex count
+        void setVertexCount(size_t count);
+
+        /// @brief Returns start index
+        int getStartIndex() const;
+
+        /// @brief Returns vertex count
+        size_t getVertexCount() const;
     private:
         VertexBuffer* m_bindedBuffer;
         unsigned int m_array;
         int m_startIndex;
-        int m_count;
+        size_t m_vertexCount;
     };
 }
 
