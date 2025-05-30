@@ -26,7 +26,7 @@ namespace wg::graphics
         /// @param usageType Initial value for the buffer usage type
         VertexBuffer(UsageType usageType);
         
-        /// @brief Calls destroy() method
+        /// @brief Calls `destroy()` method
         ~VertexBuffer();
 
         /// @brief Transfers data from `moved` to a new VertexBuffer instance

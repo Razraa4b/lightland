@@ -31,7 +31,7 @@ namespace wg::graphics
         /// @param options Options for drawing
         /// @param drawable The object to be drawn
         inline void draw(const RenderOptions& options,
-                          const Drawable&     drawable) const
+                         const Drawable&     drawable) const
         {
             drawable.draw(options, *this);
         }              
