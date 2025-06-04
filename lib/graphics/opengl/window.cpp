@@ -1,11 +1,11 @@
 #include <string.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "graphics/wkwindow.hpp"
+#include "graphics/window.hpp"
 #include "log.h"
 
 // -----------------------------------
-//  WorkingWindow class implementation
+//  Window class implementation
 // -----------------------------------
 
 namespace ad::graphics
@@ -17,7 +17,7 @@ namespace ad::graphics
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    WorkingWindow::WorkingWindow(const char* title, Rect rect, Style style)
+    Window::Window(const char* title, Rect rect, Style style)
     {
         glfwInit();
         // OpenGL 4.6
@@ -60,28 +60,28 @@ namespace ad::graphics
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    WorkingWindow::~WorkingWindow()
+    Window::~Window()
     {
         close();
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    void WorkingWindow::resize(Vec2d size)
+    void Window::resize(Vec2d size)
     {
         glfwSetWindowSize(m_glfw_window, size.x, size.y);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    void WorkingWindow::move(Vec2d position)
+    void Window::move(Vec2d position)
     {
         glfwSetWindowPos(m_glfw_window, position.x, position.y);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    void WorkingWindow::clear() const
+    void Window::clear() const
     {
         glClearColor(0, 0, 0, 1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -89,7 +89,7 @@ namespace ad::graphics
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    void WorkingWindow::update() const
+    void Window::update() const
     {
         glfwSwapBuffers(m_glfw_window);
         glfwPollEvents();
@@ -105,7 +105,7 @@ namespace ad::graphics
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    void WorkingWindow::close() const
+    void Window::close() const
     {
         if(!m_isDisposed)
         {
@@ -117,14 +117,14 @@ namespace ad::graphics
             glfwTerminate();
             m_isDisposed = true;
 
-            ldebug("The window named \'Main Window\' has been destroyed\n", title);
+            ldebug("The window named \'%s\' has been destroyed\n", title);
             delete title;
         }
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    bool WorkingWindow::isOpen() const
+    bool Window::isOpen() const
     {
         return !glfwWindowShouldClose(m_glfw_window);
     }
