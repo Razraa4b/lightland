@@ -1,7 +1,7 @@
 #ifndef SHADER_HPP
 #define SHADER_HPP
 
-namespace wg::graphics
+namespace ad::graphics
 {
     #define SHADER unsigned int
     #define SHADER_PROGRAM unsigned int

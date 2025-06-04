@@ -5,7 +5,7 @@
 #include "graphics/opengl/primitive.hpp"
 #include "graphics/vertex.hpp"
 
-namespace wg::graphics
+namespace ad::graphics
 {
     /// @brief Class providing methods for working with vertex buffer in OpenGL
     class VertexBuffer

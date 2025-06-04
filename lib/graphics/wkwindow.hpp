@@ -6,7 +6,7 @@
 
 struct GLFWwindow;
 
-namespace wg::graphics
+namespace ad::graphics
 {
     /// @brief Represents the implementation of a working graphical window
     class WorkingWindow : public Window, public RenderCanvas

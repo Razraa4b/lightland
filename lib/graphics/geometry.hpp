@@ -5,7 +5,7 @@
 #include <glm/vec2.hpp>
 #include <glm/mat4x4.hpp>
 
-namespace wg::graphics
+namespace ad::graphics
 {
     using Vec2i = glm::vec<2, int, glm::defaultp>;
     using Vec2d = glm::vec<2, double, glm::defaultp>;

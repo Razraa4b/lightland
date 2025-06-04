@@ -1,11 +1,10 @@
 ```
-   _       ___                  __      
-  | |     / (_)___  ____ ____  / /______
-  | | /| / / / __ \/ __ `/ _ \/ __/ ___/  
-  | |/ |/ / / / / / /_/ /  __/ /_(__  ) 
-  |__/|__/_/_/ /_/\__, /\___/\__/____/         
-                 /____/
-
+      ___                   ____            __  
+     /   | ___  _________  / __ \___  _____/ /__
+    / /| |/ _ \/ ___/ __ \/ / / / _ \/ ___/ //_/
+   / ___ /  __/ /  / /_/ / /_/ /  __(__  ) ,<   
+  /_/  |_\___/_/   \____/_____/\___/____/_/|_|  
+                                              
   OpenGL Libs External (Windows x64/x86)
               Not Released
 ```
@@ -21,7 +20,7 @@
 > [!IMPORTANT]
 > The application is designed to build and run on Windows x86/x64 devices only
 
-Wingets - This is a project presenting custom widgets created to decorate your Windows desktop. Also this application allows you to expand the possibilities and add new widgets, for simple widgets you will have to customize the configs, but for more dynamic widgets you need to expand the code base for the widget.
+AeroDesk - This is a project presenting custom widgets created to decorate your Windows desktop. Also this application allows you to expand the possibilities and add new widgets, for simple widgets you will have to customize the configs, but for more dynamic widgets you need to expand the code base for the widget.
 
 ## Getting Started
 

@@ -6,7 +6,7 @@
 //  VertexArray class implementation
 // -----------------------------------
 
-namespace wg::graphics
+namespace ad::graphics
 {
     VertexArray::VertexArray()
         : m_startIndex(0), m_vertexCount(0), m_bindedBuffer(nullptr) { }

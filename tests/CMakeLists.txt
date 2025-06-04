@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(WingetsTests)
+project(AeroDeskTests)
 
 # recursively collect all files with source code
 file(GLOB_RECURSE SOURCES *.cc)
@@ -23,11 +23,11 @@ target_include_directories(${PROJECT_NAME}
         ${TESTS_PROJECT_PATH}
 )
 
-# link wingets library for testing
+# link AeroDesk library for testing
 target_link_libraries(${PROJECT_NAME}
     GTest::gtest
     GTest::gmock
-    WingetsLibrary
+    AeroDeskLibrary
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES

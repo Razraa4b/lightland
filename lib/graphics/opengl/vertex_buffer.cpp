@@ -6,7 +6,7 @@
 //  VertexBuffer class implementation
 // -----------------------------------
 
-namespace wg::graphics
+namespace ad::graphics
 {
     VertexBuffer::VertexBuffer()
         : m_usageType(UsageType::Dynamic) { }

@@ -1,7 +1,7 @@
 #ifndef PRIMITIVE_HPP
 #define PRIMITIVE_HPP
 
-namespace wg::graphics
+namespace ad::graphics
 {
     enum class PrimitiveType
     {

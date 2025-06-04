@@ -1,7 +1,7 @@
 #include <glad/glad.h>
 #include "graphics/opengl/primitive.hpp"
 
-namespace wg::graphics
+namespace ad::graphics
 {
     unsigned int toGLenum(PrimitiveType type)
     {

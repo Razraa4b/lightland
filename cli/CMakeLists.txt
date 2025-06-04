@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(WingetsCLI)
+project(AeroDeskCLI)
 
 # recursively collect all files with source code
 file(GLOB_RECURSE SOURCES *.cpp)
@@ -13,11 +13,11 @@ target_include_directories(${PROJECT_NAME}
         ${CLI_PROJECT_PATH}
 )
 
-# link wingets library
+# link AeroDesk library
 target_link_libraries(${PROJECT_NAME}
-    WingetsLibrary
+    AeroDeskLibrary
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
-    OUTPUT_NAME wingets
+    OUTPUT_NAME aerodesk
 )

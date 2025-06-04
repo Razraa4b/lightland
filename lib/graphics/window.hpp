@@ -3,7 +3,7 @@
 
 #include "graphics/geometry.hpp"
 
-namespace wg::graphics
+namespace ad::graphics
 {
     /// @brief Represents an interface of graphical window
     class Window

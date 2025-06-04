@@ -1,7 +1,7 @@
 #ifndef RENDER_INTERFACES_H
 #define RENDER_INTERFACES_H
 
-namespace wg::graphics
+namespace ad::graphics
 {
     class RenderCanvas;
     class ShaderProgram;

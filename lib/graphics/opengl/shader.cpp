@@ -7,7 +7,7 @@
 //  Shader and ShaderProgram classes implementation
 // ------------------------------------------------
 
-namespace wg::graphics
+namespace ad::graphics
 {
     /*-------------------------------------------------------------------------------------------------*/
     /*                                        Shader Class                                             */

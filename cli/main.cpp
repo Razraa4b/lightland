@@ -2,11 +2,11 @@
 #include "graphics/wkwindow.hpp"
 #include "graphics/opengl/vertex_buffer.hpp"
 
-using namespace wg::graphics;
+using namespace ad::graphics;
 
 int main()
 {
-    std::cout << "Wingets Console Client" << std::endl;
+    std::cout << "AeroDesk Console Client" << std::endl;
 
     WorkingWindow window("Test Window", { 100, 100, 1000, 600 });
 

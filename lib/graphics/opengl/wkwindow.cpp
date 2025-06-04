@@ -8,7 +8,7 @@
 //  WorkingWindow class implementation
 // -----------------------------------
 
-namespace wg::graphics
+namespace ad::graphics
 {
     void framebufferSizeCallback(GLFWwindow* window, int width, int height)
     {

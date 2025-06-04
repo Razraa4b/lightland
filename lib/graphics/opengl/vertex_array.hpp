@@ -1,7 +1,7 @@
 #ifndef VERTEX_ARRAY_HPP
 #define VERTEX_ARRAY_HPP
 
-namespace wg::graphics
+namespace ad::graphics
 {
     class VertexBuffer;
 
