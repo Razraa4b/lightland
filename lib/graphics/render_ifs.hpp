@@ -6,6 +6,9 @@ namespace ad::graphics
     class RenderCanvas;
     class ShaderProgram;
 
+    class VertexArray;
+
+
     /// @brief Contains options for rendering
     struct RenderOptions
     {
@@ -34,7 +37,9 @@ namespace ad::graphics
                          const Drawable&     drawable) const
         {
             drawable.draw(options, *this);
-        }              
+        }
+        
+        virtual void draw(const VertexArray& vertexArray) const = 0;
     };
 }
 

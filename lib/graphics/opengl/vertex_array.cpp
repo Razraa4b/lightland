@@ -1,4 +1,5 @@
 #include <glad/glad.h>
+#include "graphics/opengl/primitive.hpp"
 #include "graphics/opengl/vertex_array.hpp"
 #include "graphics/opengl/vertex_buffer.hpp"
 
@@ -9,7 +10,7 @@
 namespace ad::graphics
 {
     VertexArray::VertexArray()
-        : m_startIndex(0), m_vertexCount(0), m_bindedBuffer(nullptr) { }
+        : startIndex(0), vertexCount(0), m_bindedBuffer(nullptr) { }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -18,13 +19,13 @@ namespace ad::graphics
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    VertexArray::VertexArray(VertexBuffer& buffer, size_t vertexCount, int startIndex)
-        : m_vertexCount(vertexCount), m_startIndex(startIndex), m_bindedBuffer(&buffer) { }
+    VertexArray::VertexArray(VertexBuffer& buffer, PrimitiveType primitiveType, size_t vertexCount, int startIndex)
+        : vertexCount(vertexCount), primitiveType(primitiveType), startIndex(startIndex), m_bindedBuffer(&buffer) { }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     VertexArray::VertexArray(VertexArray&& moved)
-        : m_array(moved.m_array), m_startIndex(moved.m_startIndex), m_vertexCount(moved.m_vertexCount), m_bindedBuffer(moved.m_bindedBuffer)
+        : m_array(moved.m_array), startIndex(moved.startIndex), vertexCount(moved.vertexCount), m_bindedBuffer(moved.m_bindedBuffer)
     {
         moved.m_array = 0;
     }
@@ -87,33 +88,5 @@ namespace ad::graphics
     unsigned int VertexArray::getHandle() const
     {
         return m_array;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    void VertexArray::setStartIndex(int startIndex)
-    {
-        m_startIndex = startIndex;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    void VertexArray::setVertexCount(size_t count)
-    {
-        m_vertexCount = count;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    int VertexArray::getStartIndex() const
-    {
-        return m_startIndex;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    size_t VertexArray::getVertexCount() const
-    {
-        return m_vertexCount;
     }
 }

@@ -18,7 +18,8 @@ namespace ad::graphics
             Dynamic,
             Stream
         };
-
+        UsageType usageType;
+        
         /// @brief Initializes class fields with default values
         VertexBuffer();
         
@@ -68,16 +69,9 @@ namespace ad::graphics
         
         /// @brief Returns vertex count
         size_t getVertexCount() const;
-        
-        /// @brief Sets buffer usage type
-        void setUsageType(UsageType type);
-        
-        /// @brief Returns buffer usage type
-        UsageType getUsageType() const;
     private:
         unsigned int m_buffer = 0;
         size_t m_vertexCount  = 0;
-        UsageType m_usageType;
     };
 
     unsigned int toGLenum(VertexBuffer::UsageType usageType);

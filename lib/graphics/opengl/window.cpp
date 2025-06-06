@@ -2,6 +2,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "graphics/window.hpp"
+#include "graphics/opengl/primitive.hpp"
+#include "graphics/opengl/vertex_array.hpp"
 #include "log.h"
 
 // -----------------------------------
@@ -28,7 +30,7 @@ namespace ad::graphics
         glfwWindowHint(GLFW_DECORATED, style == Style::None ? GLFW_FALSE : GLFW_TRUE);
         // Hide window before its get ready
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
-        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
 
         m_glfw_window = glfwCreateWindow(rect.size.x, rect.size.y, title, NULL, NULL);
         if(m_glfw_window == NULL)
@@ -101,6 +103,15 @@ namespace ad::graphics
             lerror("OpenGL error code %d\n", error_code);
         }
         #endif
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    void Window::draw(const VertexArray& vertexArray) const
+    {
+        glBindVertexArray(vertexArray.getHandle());
+        glDrawArrays(toGLenum(vertexArray.primitiveType), vertexArray.startIndex, vertexArray.vertexCount);
+        glBindVertexArray(0);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////

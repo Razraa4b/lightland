@@ -33,6 +33,10 @@ namespace ad::graphics
         /// @brief Updates the current window frame with the new one
         void update() const override;
 
+        /// @brief Draws a vertex array on the window
+        /// @param vertexArray Vertex array object
+        void draw(const VertexArray& vertexArray) const override;
+
         /// @brief Closes window and destroys his context
         void close() const override;
 

@@ -3,12 +3,17 @@
 
 namespace ad::graphics
 {
+    enum class PrimitiveType;
     class VertexBuffer;
 
     /// @brief Class providing methods for working with vertex array in OpenGL
     class VertexArray
     {
     public:
+        PrimitiveType primitiveType;
+        int startIndex;
+        size_t vertexCount;
+
         /// @brief Initializes a class without a pre-prepared buffer for binding
         VertexArray();
         
@@ -18,9 +23,10 @@ namespace ad::graphics
         
         /// @brief Initializes buffer data for bundle and vertex data
         /// @param buffer Vertex buffer to bind
+        /// @param primitiveType Type of the geometry primitive
         /// @param vertexCount Count of vertices
         /// @param startIndex Start index in buffer data
-        VertexArray(VertexBuffer& buffer, size_t vertexCount, int startIndex = 0);
+        VertexArray(VertexBuffer& buffer, PrimitiveType primitiveType, size_t vertexCount, int startIndex = 0);
 
         /// @brief Transfers data from `moved` to a new VertexArray instance
         /// @param moved Movable instance
@@ -41,26 +47,12 @@ namespace ad::graphics
 
         /// @brief Deletes the vertex array object from memory
         void destroy() const;
-
+        
         /// @brief Returns OpenGL vertex array handle
         unsigned int getHandle() const;
-
-        /// @brief Sets start index
-        void setStartIndex(int startIndex);
-        
-        /// @brief Sets vertex count
-        void setVertexCount(size_t count);
-
-        /// @brief Returns start index
-        int getStartIndex() const;
-
-        /// @brief Returns vertex count
-        size_t getVertexCount() const;
     private:
         VertexBuffer* m_bindedBuffer;
         unsigned int m_array;
-        int m_startIndex;
-        size_t m_vertexCount;
     };
 }
 

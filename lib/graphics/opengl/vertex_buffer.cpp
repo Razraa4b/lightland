@@ -9,12 +9,12 @@
 namespace ad::graphics
 {
     VertexBuffer::VertexBuffer()
-        : m_usageType(UsageType::Dynamic) { }
+        : usageType(UsageType::Dynamic) { }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     VertexBuffer::VertexBuffer(UsageType usageType)
-        : m_usageType(usageType) { }
+        : usageType(usageType) { }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -26,7 +26,7 @@ namespace ad::graphics
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     VertexBuffer::VertexBuffer(VertexBuffer&& moved)
-        : m_usageType(moved.m_usageType),
+        : usageType(moved.usageType),
           m_vertexCount(moved.m_vertexCount), m_buffer(moved.m_buffer)
     {
         moved.m_buffer = 0;
@@ -62,7 +62,7 @@ namespace ad::graphics
 
         glBindBuffer(GL_ARRAY_BUFFER, m_buffer);
         glBufferData(GL_ARRAY_BUFFER, count * sizeof(Vertex),
-                     vertices, toGLenum(m_usageType));
+                     vertices, toGLenum(usageType));
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
 
@@ -113,20 +113,6 @@ namespace ad::graphics
     size_t VertexBuffer::getVertexCount() const
     {
         return m_vertexCount;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    void VertexBuffer::setUsageType(UsageType type)
-    {
-        m_usageType = type;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    VertexBuffer::UsageType VertexBuffer::getUsageType() const
-    {
-        return m_usageType;
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
